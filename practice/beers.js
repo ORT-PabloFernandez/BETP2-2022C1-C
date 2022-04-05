@@ -20,9 +20,5 @@ const beers = [
     { name: 'Stolen Fruit', abv: 4.6, label: 'https://s3.amazonaws.com/brewerydbapi/beer/YGT30k/upload_uVCHP7-large.png', type: 'Wheat' },
   ];
 
-function orderBeers(beers){
-  return beers
-    .sort((a,b)=> a.type > b.type ? 1:-1);
-}
 
 console.log(orderBeers(beers));

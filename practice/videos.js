@@ -29,3 +29,22 @@ const str = `<ul>
 <li data-time="5:59">Redux Video</li>
 <li data-time="3:31">Flexbox Video</li>
 </ul>`;
+
+function getVideos(str){
+    return str
+        .replace('<ul>','').replace('</ul>','')
+        .split('</li>')
+        .slice(0,-1)
+        .map(video => ({
+            min: parseInt(video
+                .split('"')[1]
+                .split(':')[0]),
+            seg: parseInt(video
+                .split('"')[1]
+                .split(':')[1]),
+            type: video.split('>')[1]
+            })                
+        )
+}
+
+console.log(getVideos(str));
