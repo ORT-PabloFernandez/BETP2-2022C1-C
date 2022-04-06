@@ -1,0 +1,19 @@
+{
+  "name": "tp2c",
+  "version": "1.0.0",
+  "description": "Repor de Taller de Programacion 2",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ORT-PabloFernandez/BETP2-2022C1-C.git"
+  },
+  "author": "Pablo Fernandez",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ORT-PabloFernandez/BETP2-2022C1-C/issues"
+  },
+  "homepage": "https://github.com/ORT-PabloFernandez/BETP2-2022C1-C#readme"
+}

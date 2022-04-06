@@ -32,19 +32,34 @@ const str = `<ul>
 
 function getVideos(str){
     return str
-        .replace('<ul>','').replace('</ul>','')
+        .replace('<ul>','')
+        .replace('</ul>','')
         .split('</li>')
         .slice(0,-1)
-        .map(video => ({
-            min: parseInt(video
-                .split('"')[1]
-                .split(':')[0]),
-            seg: parseInt(video
-                .split('"')[1]
-                .split(':')[1]),
-            type: video.split('>')[1]
-            })                
+        .map(video => 
+            ({
+               minutos: parseInt(video
+                            .split('"')[1]
+                            .split(":")[0]),
+               segundos: parseInt(video
+                            .split('"')[1]
+                            .split(':')[1]),
+               tipo: video.split('>')[1]
+            })    
         )
 }
 
-console.log(getVideos(str));
+function getTotalSegVideos(videos, tipo){
+    let totalSegundos = 0;
+
+    videos
+        .filter(video => video.tipo === tipo)
+        .forEach(video => {
+            totalSegundos += video.minutos *60 + video.segundos
+        });
+
+    return totalSegundos;
+}
+
+
+console.log(getTotalSegVideos(getVideos(str), "Redux Video"));
