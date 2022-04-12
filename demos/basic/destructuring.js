@@ -35,3 +35,23 @@ const movie = {
     },
     type: "movie"
 }
+
+// Desestructurar objetos
+
+//let actores = movie.actors;
+//let writers = movie.writers;
+
+const {actors, writers, type} = movie;
+
+
+console.log(actors);
+console.log(writers);
+
+// Desestructurar Arrays
+
+const details = ['Juan Perez', 234234, 'juanperez@gmail.com'];
+
+const [name, id, email] = details;
+console.log(email);
+
+

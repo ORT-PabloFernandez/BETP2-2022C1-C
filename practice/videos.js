@@ -50,16 +50,16 @@ function getVideos(str){
 }
 
 function getTotalSegVideos(videos, tipo){
-    let totalSegundos = 0;
+//    let totalSegundos = 0;
+    return videos
+            .filter(video => video.tipo === tipo)
+            .reduce((totalSegundos, video) => totalSegundos + video.segundos + video.minutos * 60,0);
+            // .forEach(video => {
+            //     totalSegundos += video.minutos *60 + video.segundos
+            // });
 
-    videos
-        .filter(video => video.tipo === tipo)
-        .forEach(video => {
-            totalSegundos += video.minutos *60 + video.segundos
-        });
-
-    return totalSegundos;
+    //return totalSegundos;
 }
 
 
-console.log(getTotalSegVideos(getVideos(str), "Redux Video"));
+console.log(getTotalSegVideos(getVideos(str), "Flexbox Video"));
