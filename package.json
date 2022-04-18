@@ -15,5 +15,10 @@
   "bugs": {
     "url": "https://github.com/ORT-PabloFernandez/BETP2-2022C1-C/issues"
   },
-  "homepage": "https://github.com/ORT-PabloFernandez/BETP2-2022C1-C#readme"
+  "homepage": "https://github.com/ORT-PabloFernandez/BETP2-2022C1-C#readme",
+  "dependencies": {
+    "chalk": "^5.0.1",
+    "validator": "^13.7.0"
+  },
+  "type": "module"
 }
