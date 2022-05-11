@@ -8,9 +8,18 @@ router.get('/', async function(req, res, next) {
   res.json(inventors);
 });
 
-router.post('/', (req, res)=>{
-    res.send('alta de inventor');
+router.get('/:id', async (req, res) => {
+  const inventor = await data.getInventor(req.params.id);
+  res.json(inventor);
 });
+
+router.post('/', async (req, res)=>{
+    const result = await data.addInventor(req.body);
+    res.json(result);
+});
+
+// TODO PUT: '/'
+// TODO DELETE: '/:id'
 
 
 module.exports = router;
