@@ -1,9 +1,10 @@
 var express = require('express');
 var router = express.Router();
 const data = require('./../data/users');
+const auth = require('./../midlewares/auth');
 
 /* GET users listing. */
-router.get('/', async function(req, res, next) {
+router.get('/', auth,  async function(req, res, next) {
   const users = await data.getAllUsers();
   res.json(users);
 });
